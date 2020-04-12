@@ -1,15 +1,26 @@
-import { NextPage } from 'next'
+import React from "react"
+import Head from "next/head"
+import Component from "../components/index";
 
-const IndexPage: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <h1>
-    Hello World! - useragent: { userAgent }
-  </h1>
-)
-
-IndexPage.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent
-
-  return { userAgent }
+type Props = {
+  title: string
 }
 
-export default IndexPage
+class App extends React.Component<Props> {
+  static async getInitialProps(): Promise<Props> {
+    return { title: "Hello world" }
+  }
+
+  render() {
+    return (
+      <>
+        <Head>
+          <title>{this.props.title}</title>
+        </Head>
+        <Component />
+      </>
+    )
+  }
+}
+
+export default App
