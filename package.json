@@ -8,7 +8,8 @@
     "build:functions": "cp -R functions dist/functions",
     "copy:next": "cp -R .next dist/functions && mv dist/functions/.next dist/functions/next",
     "predeploy": "yarn build && yarn clean && yarn build:functions && yarn build:public && yarn copy:next",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "github": "github.command"
   },
   "dependencies": {
     "@types/node": "^13.11.1",

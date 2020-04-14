@@ -1,6 +1,6 @@
-import React from 'react'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Home: NextPage = () => (
   <div>
@@ -13,6 +13,12 @@ const Home: NextPage = () => (
     <h1>
       Home でーす
     </h1>
+
+    <Link href='/'>
+      <a>
+        とっぷ
+      </a>
+    </Link>
   </div>
 )
 
