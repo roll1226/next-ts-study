@@ -9,20 +9,22 @@
     "deploy": "firebase deploy",
     "copy-deps": "cd functions && cp package.json package-lock.json  ../dist/functions",
     "install-deps": "cd dist/functions && npm i",
+    "lint:functions": "tslint --project functions",
     "github": "github.command"
   },
   "dependencies": {
-    "firebase-admin": "^8.9.0",
-    "firebase-functions": "^3.3.0",
-    "@types/node": "^13.11.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.0",
+    "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
-    "next": "^9.3.4",
+    "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "firebase-functions-test": "^0.1.6"
+    "tslint": "^6.1.1",
+    "firebase-functions-test": "^0.2.1"
   }
 }
