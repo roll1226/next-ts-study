@@ -4,11 +4,18 @@
     "rewrites": [
       {
         "source": "**/**",
-        "function": "next"
+        "function": "nextApp"
       }
-    ]
+    ],
+    "predeploy": "yarn build:public"
   },
   "functions": {
-    "source": "dist/functions"
+    "source": "dist/functions",
+    "predeploy": [
+      "yarn build:functions",
+      "yarn build:next",
+      "yarn copy-deps",
+      "yarn install-deps"
+    ]
   }
 }
